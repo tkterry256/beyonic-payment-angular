@@ -20,6 +20,7 @@
   class="py-4 flex flex-col gap-6"
   [formGroup]="paymentForm"
   (ngSubmit)="onSubmit()"
+  #formRef="ngForm"
 >
   <div class="flex">
     <div class="flex-1 flex flex-col gap-3">
@@ -61,12 +62,14 @@
   <!-- divider -->
   <div class="border-b"></div>
 
-  <p class="text-red-600" *ngIf="quantity.errors?.['max']">This user is unable to receive this amount. Contact them for further assistance</p>
+  <p class="text-red-600" *ngIf="quantity.hasError('max') && formRef.submitted">
+    This user is unable to receive this amount. Contact them for further
+    assistance
+  </p>
 
   <div class="flex py-6">
     <button
       type="submit"
-      [disabled]="paymentForm.invalid"
       class="flex-1 bg-[#005989] disabled:bg-opacity-50 text-white h-9 flex justify-center items-center rounded-md text-sm font-semibold"
     >
       Proceed to pay

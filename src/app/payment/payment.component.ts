@@ -30,8 +30,8 @@ export class PaymentComponent {
   }
 
   onSubmit() {
-    console.log(this.paymentForm.value);
-    this.router.navigateByUrl('/payment-success')
+    if (this.paymentForm.valid) {
+      this.router.navigateByUrl('/payment-success');
+    }
   }
-
 }
