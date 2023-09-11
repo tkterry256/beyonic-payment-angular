@@ -1,5 +1,9 @@
-<header class="bg-[#005989] h-40 sticky top-0 shadow-xl bg-[url(/assets/header-bg.svg)] bg-cover bg-center bg-no-repeat">
-  <div class="bg-black/30 p-1">
-    <img src="/assets/logo.svg" alt="beyonic logo" />
+<header
+  class="bg-[#005989] h-40 sticky top-0 shadow-xl bg-[url(/assets/header-bg.svg)] bg-cover bg-center bg-no-repeat"
+>
+  <div class="bg-black/30 p-1 flex justify-start items-center">
+    <a [routerLink]="['/']">
+      <img src="/assets/logo.svg" alt="beyonic logo" class="h-12 md:h-14" />
+    </a>
   </div>
 </header>
