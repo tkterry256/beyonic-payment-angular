@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { PaymentComponent } from './payment/payment.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaymentSuccessComponent } from './payment-success/payment-success.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    PaymentComponent
+    PaymentComponent,
+    PaymentSuccessComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment',
@@ -12,7 +13,7 @@ export class PaymentComponent {
     quantity: [1, Validators.max(19)],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private router: Router) {}
 
   get quantity() {
     return this.paymentForm.get('quantity')!;
@@ -30,6 +31,7 @@ export class PaymentComponent {
 
   onSubmit() {
     console.log(this.paymentForm.value);
+    this.router.navigateByUrl('/payment-success')
   }
 
 }

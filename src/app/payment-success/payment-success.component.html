@@ -1,0 +1,11 @@
+<h2 class="px-2 pt-4 pb-14 text-2xl tracking-wider text-gray-700">Payment received, thank you.</h2>
+
+<h3 class="text-gray-500 font-semibold">Link details</h3>
+
+<div class="grid grid-cols-[1.3fr_1fr] py-4 gap-1.5 font-semibold text-gray-800">
+  <ng-container *ngFor="let item of orderDetails; let last = last">
+    <div *ngIf="last" class="col-span-2 py-5"></div>
+    <div> {{item.label}}: </div>
+    <div> {{ item.value }} </div>
+  </ng-container>
+</div>
