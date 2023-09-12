@@ -1,24 +1,30 @@
-<h2 class="px-2 pt-4 pb-14 text-2xl tracking-wider text-gray-700">Payment received, thank you.</h2>
+<h2 class="px-2 pt-4 pb-14 text-2xl tracking-wider text-gray-700">
+  Payment received, thank you.
+</h2>
 
 <h3 class="text-gray-500 font-semibold">Link details</h3>
 
-<div class="grid grid-cols-[1.3fr_1fr] py-4 gap-1.5 font-semibold text-gray-800">
-    <div> Date of purchase: </div>
-    <div> {{paymentDetails['dateOfPurchase'] | date}} </div>
-    
-    <div> Unit amount: </div>
-    <div> {{paymentDetails['unitAmount'] | currency:'UGX':'UGX '}} </div>
-    
-    <div> Quantity: </div>
-    <div> {{paymentDetails['quantity']}} </div>
-    
-    <div> Description: </div>
-    <div> {{paymentDetails['description']}} </div>
-    
+<div
+  class="grid grid-cols-[1.3fr_1fr] py-4 gap-1.5 font-semibold text-gray-800"
+>
+  <div>Date of purchase:</div>
+  <div>{{ paymentDetails["dateOfPurchase"] | date }}</div>
 
-    <div class="col-span-2 py-5"></div>
+  <div>Unit amount:</div>
+  <div>{{ paymentDetails["unitAmount"] | currency : "UGX" : "UGX " }}</div>
 
-    <div> Amount paid: </div>
-    <div> {{paymentDetails['amountPaid'] | currency:'UGX':'UGX '}} </div>
+  <div>Quantity:</div>
+  <div>
+    {{ paymentDetails["quantity"] }} unit{{
+      paymentDetails["quantity"] > 1 ? "s" : ""
+    }}
+  </div>
 
+  <div>Description:</div>
+  <div>{{ paymentDetails["description"] }}</div>
+
+  <div class="col-span-2 py-5"></div>
+
+  <div>Amount paid:</div>
+  <div>{{ paymentDetails["amountPaid"] | currency : "UGX" : "UGX " }}</div>
 </div>
